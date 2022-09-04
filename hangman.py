@@ -8,7 +8,7 @@ wordDictionary = ['house', 'flat', 'room', 'coffee', 'phone', 'table', 'orange']
 randomWord = random.choice(wordDictionary)
 
 for x in randomWord:
-   print("_", end=' ')
+   print("_", end=" ")
 
 def print_hangman(wrong):
   if(wrong == 0):
@@ -53,3 +53,15 @@ def print_hangman(wrong):
     print("/|\  |")
     print("/ \  |")
     print("    ===")
+
+def printWord(guessedLetters):
+  counter=0
+  rightLetters=0
+  for char in randomWord:
+    if(char in guessedLetters):
+      print(randomWord[counter], end=" ")
+      rightLetters+=1
+    else:
+      print(" ", end=" ")
+    counter+=1
+  return rightLetters
